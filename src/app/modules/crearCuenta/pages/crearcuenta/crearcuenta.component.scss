@@ -8,16 +8,17 @@
     padding: 0%;
 }
 
-form{
-    padding: 20%;
-}
-span{
-    text-decoration: underline;
-    font-weight: bold;
-}
+
 
 a{
     color:black;
 }
 
+.versionescritorio{
+    display: block;
+    @media only screen and (max-width : 570px)
+    {
+        display: none;
+    }
+}
 
