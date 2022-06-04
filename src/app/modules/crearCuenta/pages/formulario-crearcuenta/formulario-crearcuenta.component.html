@@ -1,0 +1,36 @@
+<form>
+
+    <div class="form-group row margen">
+        <div class="row">
+            <div class="col centrar">
+                <h3>Crear cuenta</h3>
+                <p>Te damos la bienvenida a la forma más fácil y accesible de estrenar un auto</p>
+            </div>
+        </div>
+        <div class="form-floating mb-3 col-12">
+            <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Correo eléctronico</label>
+            <div  class="invalid-feedback">
+                Campo requerido
+            </div>
+        </div>
+        <div class="form-floating mb-3 col-12">
+            <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Crea tu contraseña</label>
+        </div>
+        <div class="form-floating mb-3 col-12">
+            <input type="tel" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Celular</label>
+        </div>
+        <div class="mb-3 col-12">
+            <label class="contenedorInputCheckRadio">Acepto los <span>Términos, Condiciones y Políticas de Privacidad.</span>
+                <input  id="esAjusteMensualIsr" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+        </div>
+        <div class="d-grid gap-2">
+            <button routerLink="/autenticacion/validacionotp" class="btn btn-primary" type="button">Crear cuenta</button>
+          </div>
+    </div>
+
+</form>
