@@ -10,3 +10,14 @@ a{
         color:white;
     }
 }
+
+.cosas{
+    padding: 0 28px;
+    width: 100%;
+    a:first-child{
+            float:left;
+    }
+    a:last-child{
+        float:right;
+}
+}
