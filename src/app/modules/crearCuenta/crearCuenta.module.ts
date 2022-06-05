@@ -6,6 +6,7 @@ import { OtpComponent } from './pages/otp/otp.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { FormularioCrearcuentaComponent } from './pages/formulario-crearcuenta/formulario-crearcuenta.component';
 import { FormularioOtpComponent } from './pages/formulario-otp/formulario-otp.component';
+import { IngresoexitosoComponent } from './pages/ingresoexitoso/ingresoexitoso.component';
 
 @NgModule({
     declarations:[
@@ -13,7 +14,8 @@ import { FormularioOtpComponent } from './pages/formulario-otp/formulario-otp.co
     OtpComponent,
     HeaderComponent,
     FormularioCrearcuentaComponent,
-    FormularioOtpComponent
+    FormularioOtpComponent,
+    IngresoexitosoComponent
   ],
     imports:[CommonModule,crearCuentaRoutingModule]
 })

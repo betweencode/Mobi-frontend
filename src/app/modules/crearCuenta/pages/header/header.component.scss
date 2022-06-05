@@ -1,3 +1,12 @@
 a{
     color:var(--gray)
 }
+
+.oscuro{
+    background-color: var(--fondo) !important;
+    color:white !important;
+    padding: 0;
+    a{
+        color:white;
+    }
+}
