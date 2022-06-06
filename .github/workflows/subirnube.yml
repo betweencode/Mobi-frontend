@@ -1,4 +1,4 @@
-name: despliegeCosmonaut
+name: despliegeMobi
 
 on:
   push:
