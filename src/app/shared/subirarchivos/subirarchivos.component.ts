@@ -1,5 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ACCIONES_MODALARCHIVOS, ObjetoEmitidoModalArchivos } from 'src/app/core/modelos/objetoemitido';
+declare var Webcam:any;
 
 @Component({
   selector: 'app-subirarchivos',
@@ -13,6 +14,7 @@ export class SubirarchivosComponent implements OnInit {
     this.isMobile = tamanio < 570;
   }
   @Input() public texto!: String;
+  @Input() public esCamara:boolean = false;
 
 
   public isMobile: boolean = false;
@@ -26,9 +28,11 @@ export class SubirarchivosComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMobile = window.innerWidth < 570;
+    
   }
 
   public abrirVentana(modal:string="",opcion:string=""){
+    
     console.log(modal,opcion);
     if((this.cargando))return;
     this.activo = !this.activo
@@ -53,7 +57,15 @@ export class SubirarchivosComponent implements OnInit {
   }
 
   private abrirArchivos(){
-
+   
+    
+      let mm = document.createElement("input");
+      mm.type="file"
+      mm.onchange = ()=>{
+        this.enviadoPorModal({type:ACCIONES_MODALARCHIVOS.SUBIRARCHIVO});
+      }
+      mm.click();
+    
   }
 
   public enviadoPorModal(obj:ObjetoEmitidoModalArchivos){

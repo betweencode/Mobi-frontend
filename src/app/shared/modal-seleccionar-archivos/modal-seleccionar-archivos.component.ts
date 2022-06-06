@@ -1,24 +1,42 @@
-import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input, AfterViewInit } from '@angular/core';
 import { ACCIONES_MODALARCHIVOS, ObjetoEmitidoModalArchivos } from 'src/app/core/modelos/objetoemitido';
-
+declare var Webcam:any;
 @Component({
   selector: 'app-modal-seleccionar-archivos',
   templateUrl: './modal-seleccionar-archivos.component.html',
   styleUrls: ['./modal-seleccionar-archivos.component.scss']
 })
-export class ModalSeleccionarArchivosComponent implements OnInit {
+export class ModalSeleccionarArchivosComponent implements OnInit,AfterViewInit {
   @Output() salida:EventEmitter<ObjetoEmitidoModalArchivos> = new EventEmitter<ObjetoEmitidoModalArchivos>();
   @Input() opcion:string = "";
+  @Input() esCamara:boolean = false;
+  @Input() isMobile:boolean = false;
   public cantidadfotos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
   public elegirFoto:boolean = false;
   public seleccionado = -1;
   public base64?:string = undefined;
+  
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
+    
+    
+     
     
   }
+  ngAfterViewInit(): void {
+    Webcam.set({
+      width: 320,
+      height: 240,
+      image_format: 'jpeg',
+      jpeg_quality: 90
+    });
+    Webcam.attach( '#miCamaraid' );
+  }
+
+  ngOnInit(): void {
+   
+  }
+  
 
   public cancelar(){
     this.salida.emit({type:ACCIONES_MODALARCHIVOS.CANCELAR});

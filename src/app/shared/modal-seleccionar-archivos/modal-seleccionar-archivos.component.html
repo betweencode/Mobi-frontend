@@ -39,15 +39,18 @@
         <div  class="part1 fotoaqui" [ngClass]="{'sinfotoaqui':base64}">
             <span *ngIf="base64 == undefined">Foto aquí</span>
             <img *ngIf="base64" width="100%" height="100%" [src]="base64" alt="" srcset="">
+            <div id="miCamaraid"></div>
         </div>
         <div class="part2" style="background-color: white">
             <div class="d-grid gap-2">
                 <button  class="btn btn-primary" (click)="tomarFoto()" type="button">{{(base64)?'Seleccionar':'Tomar foto'}}</button>
               </div>
         </div>
+        
     </div>
     
 </ng-container>
+<div *ngIf="!isMobile" class="background-img"></div>
 
 
 

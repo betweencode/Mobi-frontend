@@ -16,9 +16,15 @@
         </span>Toda tu información esta protegida</div>
   </div>
   <div class="row">
-      <div class="col-12">
-          <span>Validaremos tu identidad</span>
-          <span>Sube tu INE y tomate una foto</span>
+      <div class="col-12 identidad11">
+          <span style="    display: block;
+          font-size: x-large;
+          text-align: center;
+          font-weight: 600;">Validaremos tu identidad</span>
+          <span style="    display: block;
+          font-size: normal;
+          text-align: center;
+          font-weight: 300;">Sube tu INE y tomate una foto</span>
       </div>
   </div>
   <div class="row">
@@ -33,7 +39,7 @@
   </div>
   <div class="row">
       <div class="col">
-        <app-subirarchivos [texto]="'Tómate una foto de frente'"></app-subirarchivos>
+        <app-subirarchivos [texto]="'Tómate una foto de frente'" [esCamara]="true"></app-subirarchivos>
       </div>
   </div>
   <div class="row">

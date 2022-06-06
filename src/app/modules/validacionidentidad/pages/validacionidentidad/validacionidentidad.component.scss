@@ -25,4 +25,23 @@
         font-size: smaller;
     }
 
+    .identidad11{
+        span:first-child{
+            display: block;
+            font-size: large;
+        }
+        span:last-child{
+            display: block;
+            font-size: medium;
+        }
+    }
+
+}
+
+.row{
+    @media only screen and (min-width : 570px)
+    {
+        width: 60%;
+        margin: auto!important;
+    }
 }

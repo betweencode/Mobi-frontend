@@ -38,4 +38,4 @@
 </div>
 
 
-<app-modal-seleccionar-archivos *ngIf="verModal" [opcion]="opcionSeleccionada" (salida)="enviadoPorModal($event)"></app-modal-seleccionar-archivos>
+<app-modal-seleccionar-archivos *ngIf="verModal" [opcion]="opcionSeleccionada" [esCamara]="esCamara" [isMobile]="isMobile" (salida)="enviadoPorModal($event)"></app-modal-seleccionar-archivos>
