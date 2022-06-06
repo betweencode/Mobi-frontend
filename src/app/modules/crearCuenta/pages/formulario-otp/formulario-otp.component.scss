@@ -27,3 +27,16 @@ form{
         font-weight: 600;
     }
 }
+
+.desabilitado{
+    background: #c6c6c6!important;
+    color: gray !important;
+    border: 0 !important;
+}
+
+button:focus{
+    background: var(--principal);
+    color: var(--fondo);
+    border: 0;
+    outline: none;
+}

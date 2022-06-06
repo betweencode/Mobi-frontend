@@ -67,7 +67,12 @@
             </div>
         </div>
         <div class="d-grid gap-2">
-            <button  class="btn btn-primary" type="submit">Crear cuenta</button>
+            <button  class="btn btn-primary" type="submit">
+                <div *ngIf="cargando" class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <span *ngIf="!cargando"> Crear cuenta</span>
+               </button>
           </div>
     </div>
 

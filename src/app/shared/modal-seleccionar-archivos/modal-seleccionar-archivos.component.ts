@@ -24,13 +24,7 @@ export class ModalSeleccionarArchivosComponent implements OnInit,AfterViewInit {
     
   }
   ngAfterViewInit(): void {
-    Webcam.set({
-      width: 320,
-      height: 240,
-      image_format: 'jpeg',
-      jpeg_quality: 90
-    });
-    Webcam.attach( '#miCamaraid' );
+   
   }
 
   ngOnInit(): void {
