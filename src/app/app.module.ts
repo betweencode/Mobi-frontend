@@ -14,7 +14,6 @@ import { FooterComponent } from './layout/footer/footer.component';
   declarations: [
     AppComponent,
     AutenticacionLayoutComponent,
-    ValidacionidentidadComponent,
     ContenidoComponent,
     HeaderComponent,
     FooterComponent

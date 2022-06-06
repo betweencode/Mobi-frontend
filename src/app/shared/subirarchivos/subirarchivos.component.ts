@@ -1,13 +1,21 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ACCIONES_MODALARCHIVOS, ObjetoEmitidoModalArchivos } from 'src/app/core/modelos/objetoemitido';
 declare var Webcam:any;
 
 @Component({
   selector: 'app-subirarchivos',
   templateUrl: './subirarchivos.component.html',
-  styleUrls: ['./subirarchivos.component.scss']
+  styleUrls: ['./subirarchivos.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi:true,
+      useExisting: SubirarchivosComponent
+    }
+  ]
 })
-export class SubirarchivosComponent implements OnInit {
+export class SubirarchivosComponent implements OnInit, ControlValueAccessor  {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     let tamanio = event.target.innerWidth;
@@ -15,6 +23,9 @@ export class SubirarchivosComponent implements OnInit {
   }
   @Input() public texto!: String;
   @Input() public esCamara:boolean = false;
+
+  onChange = (_:any) => { }
+  onTouch = () => { }
 
 
   public isMobile: boolean = false;
@@ -25,6 +36,15 @@ export class SubirarchivosComponent implements OnInit {
   public opcionSeleccionada:string = "";
 
   constructor() { }
+  writeValue(obj: any): void {
+    console.log("Tampoco escribo");
+  }
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: any): void {
+    console.log("marcado");
+  }
 
   ngOnInit(): void {
     this.isMobile = window.innerWidth < 570;
@@ -80,6 +100,8 @@ export class SubirarchivosComponent implements OnInit {
             setTimeout(() => {
                 this.cargando = false;
                 this.subidaCorrecta = true;
+                this.onTouch();
+                this.onChange(true);
             }, 2000);
             break;
       }

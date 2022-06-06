@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-validacionidentidad',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValidacionidentidadComponent implements OnInit {
 
-  constructor() { }
+  public myForm!:FormGroup;
+  public cargando:boolean = false;
+
+  constructor(private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
+    this.myForm = this.createForm();
+  }
+
+  private createForm(){
+    return this.fb.group({
+      subida1:['',Validators.required],
+      subida2:['',Validators.required],
+      subida3:['',Validators.required]
+    });
   }
 
   public recibirEvento(obj:any){
@@ -24,6 +38,21 @@ export class ValidacionidentidadComponent implements OnInit {
             console.log("Hubo un error");
             break;
       }
+  }
+
+  public enviarSubmit(){
+
+     console.log("estado",this.myForm.invalid);
+      if(this.myForm.invalid){
+        return;
+      }
+
+      this.cargando = true;
+      setTimeout(() => {
+        this.cargando = false;
+        this.router.navigate(["/sesion/validacionidentidad"]);
+      }, 1000);
+
   }
 
 }
