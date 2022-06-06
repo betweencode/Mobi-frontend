@@ -1,0 +1,17 @@
+    <div (click)="abrirVentana()" class="subirarchivos">
+        <div  >
+            <span class="material-icons mr-4">
+                cloud_upload
+                </span><span>{{texto}}</span>
+        </div>
+        <div *ngIf="isMobile && activo" class="subventana slide-in-fwd-center">
+            <ul>
+                <li (click)="abrirVentana('ventanamodal')">Galeria de fotos</li>
+                <li>Tomar fotos</li>
+                <li>Seleccionar archivos</li>
+            </ul>
+        </div>
+    </div>
+   
+
+<app-modal-seleccionar-archivos *ngIf="verModal" (salida)="enviadoPorModal($event)"></app-modal-seleccionar-archivos>

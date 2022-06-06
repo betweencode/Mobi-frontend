@@ -1,0 +1,42 @@
+.subirarchivos {
+    width: 100%;
+    border: 2px dashed black;
+    margin: 20px 0px;
+    padding: 20px;
+    background: var(--input);
+    position: relative;
+    border-radius: 10px;
+
+    div {
+        text-align: center;
+        margin: auto;
+        width: 50%;
+    }
+
+    cursor: pointer;
+
+    .subventana {
+        position: absolute;
+        width: 90%;
+        height: fit-content;
+        background-color: var(--gray);
+        border-radius: 25px;
+        z-index: 1;
+
+        ul {
+            list-style: none;
+            text-align: left;
+            color: white;
+
+            li {
+                margin: 10px;
+                border-bottom: 1px solid #888888;
+            }
+
+            li:hover {
+                color: #8ae0b0;
+                ;
+            }
+        }
+    }
+}

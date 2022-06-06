@@ -1,0 +1,47 @@
+
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+      
+    </li>
+    <li class="nav-item">
+      
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+  <div class="row">
+      <div class="col estilo"><span class="material-icons mr-4">
+        lock
+        </span>Toda tu información esta protegida</div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+          <span>Validaremos tu identidad</span>
+          <span>Sube tu INE y tomate una foto</span>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <app-subirarchivos [texto]="'Sube el frente de tu INE'"></app-subirarchivos>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <app-subirarchivos [texto]="'Sube el reverso de tu INE'"></app-subirarchivos>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <app-subirarchivos [texto]="'Tómate una foto de frente'"></app-subirarchivos>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <div class="d-grid gap-2">
+            <button routerLink="/autenticacion/validacionotp" class="btn btn-primary" type="button">Crear cuenta</button>
+          </div>
+      </div>
+  </div>
+
+

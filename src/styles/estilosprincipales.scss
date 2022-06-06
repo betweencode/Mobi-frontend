@@ -103,3 +103,24 @@
   .container-fluid{
       padding: 0;
   }
+
+  .cosas{
+    width: 100%;
+    margin: 0px 11px;
+    span:first-child{
+        float: left;
+        text-decoration: underline;
+    }
+    span:last-child{
+        float: right;
+        color:#ababab;
+    }
+    a:first-child{
+      float: left;
+      text-decoration: underline;
+  }
+  a:last-child{
+      float: right;
+      color:#ababab;
+  }
+}

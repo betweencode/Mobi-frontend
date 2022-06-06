@@ -1,0 +1,13 @@
+<div class="modalitoespecial slide-in-bottom">
+    <nav class="navbar bg-light mb-5">
+        <div class="cosas" >
+            <span (click)="cancelar()">Cancelar</span>
+            <span>Tu carrete de fotos</span>
+        </div>
+    </nav>
+    <div class="contenedorgridcuadros">
+            <div *ngFor="let item of cantidadfotos">{{item}}</div>
+    </div>
+</div>
+
+
