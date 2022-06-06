@@ -40,6 +40,7 @@ export class FormularioOtpComponent implements OnInit {
 
   public tecla(evento: any, llave: string) {
     console.log((evento));
+    alert(JSON.stringify(evento));
     evento.preventDefault();
     this.myForm.controls[llave].setValue('0');
     if(evento.key >= '0' && evento.key <= '9'){
