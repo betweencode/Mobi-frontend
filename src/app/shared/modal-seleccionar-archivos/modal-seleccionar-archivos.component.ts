@@ -20,6 +20,9 @@ export class ModalSeleccionarArchivosComponent implements OnInit {
   public cancelar(){
     this.salida.emit({type:ACCIONES_MODALARCHIVOS.CANCELAR});
   }
+  public aceptar(){
+    this.salida.emit({type:ACCIONES_MODALARCHIVOS.SUBIRARCHIVO,datos:this.seleccionado});
+  }
 
   public visualizarFotoSeleccionada(item:any){
       this.elegirFoto = true;

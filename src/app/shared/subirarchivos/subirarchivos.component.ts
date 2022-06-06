@@ -18,6 +18,8 @@ export class SubirarchivosComponent implements OnInit {
   public isMobile: boolean = false;
   public activo:boolean = false;
   public verModal:boolean = false;
+  public cargando:boolean = false;
+  public subidaCorrecta:boolean = false;
 
   constructor() { }
 
@@ -26,6 +28,7 @@ export class SubirarchivosComponent implements OnInit {
   }
 
   public abrirVentana(opcion:string = ""){
+    if((this.cargando))return;
     this.activo = !this.activo
     if(this.activo && !this.isMobile){
       this.abrirArchivos();
@@ -50,10 +53,18 @@ export class SubirarchivosComponent implements OnInit {
   }
 
   public enviadoPorModal(obj:ObjetoEmitidoModalArchivos){
+    this.activo = false;
+    this.verModal = false;
       switch(obj.type){
           case ACCIONES_MODALARCHIVOS.CANCELAR:
-             this.activo = false;
-             this.verModal = false;
+              console.log("Se cancela");
+            break;
+          case ACCIONES_MODALARCHIVOS.SUBIRARCHIVO:
+            this.cargando = true;
+            setTimeout(() => {
+                this.cargando = false;
+                this.subidaCorrecta = true;
+            }, 2000);
             break;
       }
   }

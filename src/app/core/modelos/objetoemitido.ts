@@ -5,5 +5,6 @@ export interface ObjetoEmitidoModalArchivos{
 }
 
 export enum ACCIONES_MODALARCHIVOS {
-    CANCELAR
+    CANCELAR,
+    SUBIRARCHIVO
   }
