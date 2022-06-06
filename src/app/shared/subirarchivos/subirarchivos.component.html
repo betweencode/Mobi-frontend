@@ -30,12 +30,12 @@
     </div>
     <div *ngIf="isMobile && activo" class="subventana slide-in-fwd-center">
         <ul>
-            <li (click)="abrirVentana('ventanamodal')">Galeria de fotos</li>
-            <li>Tomar fotos</li>
-            <li>Seleccionar archivos</li>
+            <li (click)="abrirVentana('ventanamodal','galeria')">Galeria de fotos</li>
+            <li (click)="abrirVentana('ventanamodal','foto')">Tomar fotos</li>
+            <li (click)="abrirVentana('ventanamodal','galeria')">Seleccionar archivos</li>
         </ul>
     </div>
 </div>
 
 
-<app-modal-seleccionar-archivos *ngIf="verModal" (salida)="enviadoPorModal($event)"></app-modal-seleccionar-archivos>
+<app-modal-seleccionar-archivos *ngIf="verModal" [opcion]="opcionSeleccionada" (salida)="enviadoPorModal($event)"></app-modal-seleccionar-archivos>

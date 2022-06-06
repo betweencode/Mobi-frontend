@@ -20,6 +20,7 @@ export class SubirarchivosComponent implements OnInit {
   public verModal:boolean = false;
   public cargando:boolean = false;
   public subidaCorrecta:boolean = false;
+  public opcionSeleccionada:string = "";
 
   constructor() { }
 
@@ -27,21 +28,24 @@ export class SubirarchivosComponent implements OnInit {
     this.isMobile = window.innerWidth < 570;
   }
 
-  public abrirVentana(opcion:string = ""){
+  public abrirVentana(modal:string="",opcion:string=""){
+    console.log(modal,opcion);
     if((this.cargando))return;
     this.activo = !this.activo
     if(this.activo && !this.isMobile){
       this.abrirArchivos();
     }else{
-       this.abrirModal(opcion);
+       this.abrirModal(modal,opcion);
     }
   }
 
 
-  private abrirModal(opcion:string){
-      switch(opcion){
+  private abrirModal(modal:string,opcion:string){
+      switch(modal){
           case "ventanamodal":
+            
              this.verModal = true;
+             this.opcionSeleccionada = opcion;
             break;
            default:
              break;
