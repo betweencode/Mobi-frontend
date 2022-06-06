@@ -30,7 +30,12 @@
             </div>
         </div>
         <div class="d-grid gap-2 mb-4">
-            <button [disabled]="!habilitado" [class.desabilitado]="!habilitado" #boton1  class="btn btn-primary" type="submit">Continuar</button>
+            <button [disabled]="!habilitado" [class.desabilitado]="!habilitado" #boton1  class="btn btn-primary" type="submit">
+                <div *ngIf="cargando" class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <span *ngIf="!cargando"> Continuar</span>
+            </button>
         </div>
         
     </div>

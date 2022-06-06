@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="form-floating mb-3 col-12">
-            <input formControlName="correo" type="email" [class.is-invalid]="f.correo.touched && f.correo.invalid" [class.is-valid]="f.correo.touched && f.correo.valid" class="form-control is-invalid" id="floatingInput" placeholder="anyvalue">
+            <input autocomplete="off"  formControlName="correo" type="email" [class.is-invalid]="f.correo.touched && f.correo.invalid" [class.is-valid]="f.correo.touched && f.correo.valid" class="form-control " id="floatingInput" placeholder="anyvalue">
             <label for="floatingInput">Correo eléctronico</label>
             <div  class="invalid-feedback">
                 <div class="alert alert-danger" role="alert">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="form-floating mb-3 col-12 passwordinput">
-            <input formControlName="password" [class.is-invalid]="f.password.touched && f.password.invalid" [class.is-valid]="f.password.touched && f.password.valid" [type]="verPassword?'text':'password'" class="form-control" id="floatingInput" placeholder="anyvalue">
+            <input  formControlName="password" [class.is-invalid]="f.password.touched && f.password.invalid" [class.is-valid]="f.password.touched && f.password.valid" [type]="verPassword?'text':'password'" class="form-control" id="floatingInput" placeholder="anyvalue">
             <span *ngIf="vacio(f.password.value) && !verPassword" (click)="verPassword=true" class="material-icons mr-4 alerta">
                 visibility
                 </span>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="form-floating mb-3 col-12">
-            <input  formControlName="celular" type="tel" [class.is-invalid]="f.celular.touched && f.celular.invalid" [class.is-valid]="f.celular.touched && f.celular.valid" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input autocomplete="off"  formControlName="celular" type="tel" [class.is-invalid]="f.celular.touched && f.celular.invalid" [class.is-valid]="f.celular.touched && f.celular.valid" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Celular</label>
             <div  class="invalid-feedback">
                 <div class="alert alert-danger" role="alert">

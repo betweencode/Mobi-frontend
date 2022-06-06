@@ -15,6 +15,7 @@ export class FormularioOtpComponent implements OnInit {
   public celular: String = ""
   public myForm!: FormGroup;
   public habilitado:boolean = false;
+  public cargando:boolean = false;
 
   constructor(private fb: FormBuilder,private router:Router) { }
 
@@ -72,7 +73,11 @@ export class FormularioOtpComponent implements OnInit {
           return;
       }
 
-      this.router.navigate(['/autenticacion/exito']);
+      this.cargando = true;
+      setTimeout(() => {
+        this.cargando = false;
+        this.router.navigate(['/autenticacion/exito']);
+      }, 1000);
   }
 
 }
