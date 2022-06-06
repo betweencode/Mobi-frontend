@@ -4,11 +4,15 @@
     .nav-item{
         width: 50px;
         height: 5px;
-        background-color: var(--principal);
+        
         border-radius: 5px;
         margin: 0px 10px;
     }
 
+    .nav-item:first-child{
+        background-color: var(--principal);
+    }
+    .nav-item:nth-last-child(-n+2) {background-color:var(--inputdark);}
     
 
 }

@@ -1,4 +1,4 @@
-<div class="modalitoespecial slide-in-bottom">
+<div *ngIf="!elegirFoto; else elegirGaleria" class="modalitoespecial slide-in-bottom">
     <nav class="navbar bg-light mb-5">
         <div class="cosas" >
             <span (click)="cancelar()">Cancelar</span>
@@ -6,8 +6,19 @@
         </div>
     </nav>
     <div class="contenedorgridcuadros">
-            <div *ngFor="let item of cantidadfotos">{{item}}</div>
+            <div *ngFor="let item of cantidadfotos" (click)="visualizarFotoSeleccionada(item)">{{item}}</div>
     </div>
 </div>
-
+<ng-template #elegirGaleria>
+    <div  class="modalitoespecial slide-in-bottom">
+        <div class="part1">
+            {{seleccionado}}
+        </div>
+        <div class="part2">
+            <span (click)="elegirFoto = false">Cancelar</span>
+            <span (click)="cancelar()">Usar</span>
+        </div>
+    </div>
+    
+</ng-template>
 

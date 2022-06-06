@@ -37,3 +37,32 @@
     
 }
 
+.part1{
+    height: calc(100% - 120px);
+    background-color: var(--inputdark);
+    margin: 20px;
+    text-align: center;
+    padding-top: calc(50% + 30px);
+    font-size: xxx-large;
+    color: grey;
+}
+.part2{
+    background-color: var(--gray) ;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 100%;
+    width: 100%;
+    color:white;
+    padding:30px;
+    span{
+        text-decoration: underline;
+
+    }
+    span:first-child{
+        float: left;
+    }
+    span:last-child{
+        float: right;
+    }
+}
+
