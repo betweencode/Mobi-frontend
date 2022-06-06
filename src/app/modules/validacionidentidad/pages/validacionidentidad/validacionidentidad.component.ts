@@ -50,7 +50,7 @@ export class ValidacionidentidadComponent implements OnInit {
       this.cargando = true;
       setTimeout(() => {
         this.cargando = false;
-        this.router.navigate(["/sesion/validacionidentidad"]);
+        this.router.navigate(["/sesion/exitoautorizada"]);
       }, 1000);
 
   }
