@@ -10,3 +10,12 @@ span{
     text-decoration: underline;
     font-weight: bold;
 }
+.passwordinput{
+    position:relative;
+}
+.passwordinput > span{
+    position: absolute;
+    right: 60px;
+    top:20px;
+    cursor: pointer;
+}

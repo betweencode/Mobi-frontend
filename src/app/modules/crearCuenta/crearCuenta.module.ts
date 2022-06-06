@@ -7,6 +7,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FormularioCrearcuentaComponent } from './pages/formulario-crearcuenta/formulario-crearcuenta.component';
 import { FormularioOtpComponent } from './pages/formulario-otp/formulario-otp.component';
 import { IngresoexitosoComponent } from './pages/ingresoexitoso/ingresoexitoso.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[
@@ -17,7 +18,7 @@ import { IngresoexitosoComponent } from './pages/ingresoexitoso/ingresoexitoso.c
     FormularioOtpComponent,
     IngresoexitosoComponent
   ],
-    imports:[CommonModule,crearCuentaRoutingModule]
+    imports:[CommonModule,crearCuentaRoutingModule,FormsModule,ReactiveFormsModule]
 })
 export class crearCuentaModule{
 
