@@ -39,33 +39,34 @@ export class FormularioOtpComponent implements OnInit {
   }
 
   public tecla(evento: any, llave: string) {
-    console.log((evento));
-    alert(JSON.stringify(evento));
+   
+    let valor = (!navigator.userAgent.toLowerCase().includes("android") && !navigator.userAgent.toLowerCase().includes("ios"))?evento.key:"";
     evento.preventDefault();
-    this.myForm.controls[llave].setValue('0');
-    if(evento.key >= '0' && evento.key <= '9'){
-      setTimeout(() => {
-        console.log(evento);
-        this.myForm.controls[llave].setValue(evento.key);
-        switch (llave) {
-          case 'c1':
-             this.inputc1.nativeElement.focus();
-            break;
-          case 'c2':
-            this.inputc2.nativeElement.focus();
-            break;
-          case 'c3':
-            this.inputc3.nativeElement.focus();
-            break;
-          case 'c4':
-            this.habilitado = true;
-            setTimeout(() => {
-              this.boton1.nativeElement.focus();
-            }, 10);
-            break;
-        }
-       }, 10);
-    }
+      this.myForm.controls[llave].setValue('0');
+    setTimeout(() => {
+      console.log(evento);
+      if((!navigator.userAgent.toLowerCase().includes("android") && !navigator.userAgent.toLowerCase().includes("ios"))){
+        this.myForm.controls[llave].setValue(valor);
+      }
+      switch (llave) {
+        case 'c1':
+           this.inputc1.nativeElement.focus();
+          break;
+        case 'c2':
+          this.inputc2.nativeElement.focus();
+          break;
+        case 'c3':
+          this.inputc3.nativeElement.focus();
+          break;
+        case 'c4':
+          this.habilitado = true;
+          setTimeout(() => {
+            this.boton1.nativeElement.focus();
+          }, 10);
+          break;
+      }
+     }, 10);
+    
 
   }
 
